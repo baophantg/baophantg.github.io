@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Phan Trần Gia Bảo – Chuyên viên Hệ thống & Vận hành Chuỗi cung ứng (WMS / OMS / SAP). Dự án, mẫu tài liệu và CV.">
+<meta property="og:title" content="Phan Trần Gia Bảo – Supply Chain Systems">
+<meta property="og:description" content="WMS / OMS / SAP: dự án go-live, tích hợp, mẫu tài liệu triển khai và CV tiếng Việt / English.">
+<meta property="og:type" content="website">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>Gia Bảo – Supply Chain Systems</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: warehouse-floor portfolio. Single reading column, case files styled like location-labelled documents; one safety-yellow floor marking as the bold spot. */
+:root {
+  --bg: #f2f5f4;
+  --surface: #ffffff;
+  --ink: #14232a;
+  --muted: #52646b;
+  --line: #d3dcdd;
+  --accent: #1f5566;
+  --accent-soft: #e4eef0;
+  --mark: #e8b10f;
+  --mark-ink: #14232a;
+  --display: "Archivo", "Segoe UI", Arial, sans-serif;
+  --body: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f171a; --surface: #162228; --ink: #e3ebec; --muted: #9fb1b6; --line: #2a3a40;
+    --accent: #7cc3d6; --accent-soft: #1b2e35; --mark: #f2c230; --mark-ink: #0f171a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f171a; --surface: #162228; --ink: #e3ebec; --muted: #9fb1b6; --line: #2a3a40;
+  --accent: #7cc3d6; --accent-soft: #1b2e35; --mark: #f2c230; --mark-ink: #0f171a; color-scheme: dark;
+}
+
+* { box-sizing: border-box }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-block: 0 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+[data-lang="en"] [data-l="vi"], :root:not([data-lang="en"]) [data-l="en"] { display: none }
+.wrap { max-width: 920px; margin: 0 auto }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; text-wrap: balance }
+p { margin: 0 }
+a { color: var(--accent) }
+button { font: inherit; color: inherit; cursor: pointer }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase }
+
+/* top bar */
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 18px; flex-wrap: wrap }
+.bar .who { color: var(--muted) }
+.toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: var(--surface) }
+.toggle button { border: 0; background: none; padding: 5px 12px; font-family: var(--mono); font-size: 12px; letter-spacing: .06em }
+.toggle button[aria-pressed="true"] { background: var(--accent); color: var(--bg) }
+
+/* hero */
+.hero { display: grid; gap: 18px; padding-block: 28px 32px }
+.hero .eyebrow { color: var(--accent) }
+.hero h1 { font-size: clamp(38px, 7vw, 64px); font-weight: 800; letter-spacing: -.01em }
+.hero .role { font-family: var(--display); font-weight: 700; font-size: clamp(18px, 2.6vw, 23px); color: var(--accent) }
+.hero .lead { max-width: 62ch; font-size: 17px; color: var(--ink) }
+.floor { height: 10px; border-radius: 2px; background: repeating-linear-gradient(-45deg, var(--mark) 0 14px, var(--mark-ink) 14px 28px) }
+.actions { display: flex; flex-wrap: wrap; gap: 10px }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 4px; border: 1px solid var(--accent); background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 600; font-size: 15px }
+.btn.ghost { background: transparent; color: var(--accent) }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; border-block: 1px solid var(--line); margin-top: 8px }
+.stat { padding: 16px 14px; border-left: 1px solid var(--line); min-width: 0 }
+.stat:first-child { border-left: 0; padding-left: 0 }
+.stat b { display: block; font-family: var(--display); font-size: 30px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1.1 }
+.stat span { font-size: 13.5px; color: var(--muted); line-height: 1.4; display: block; margin-top: 4px }
+
+section.block { margin-top: 56px; display: grid; gap: 20px }
+.head { display: grid; gap: 6px }
+.head .mono { color: var(--muted) }
+.head h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 800 }
+.head p { color: var(--muted); max-width: 62ch }
+
+/* system map */
+.map { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; overflow-x: auto }
+.map svg { display: block; width: 100%; min-width: 560px; height: auto }
+.map .node rect { fill: var(--bg); stroke: var(--line); stroke-width: 1.5 }
+.map .node.core rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2 }
+.map .node text { fill: var(--ink); font-family: var(--display); font-weight: 700; font-size: 15px }
+.map .node text.sub { fill: var(--muted); font-family: var(--body); font-weight: 400; font-size: 11.5px }
+.map .edge { stroke: var(--muted); stroke-width: 1.5; fill: none }
+.map .edge.main { stroke: var(--accent); stroke-width: 2.5 }
+.map .lbl { fill: var(--muted); font-family: var(--mono); font-size: 10.5px; letter-spacing: .04em }
+.map .arrow { fill: var(--muted) }
+.map .arrow.main { fill: var(--accent) }
+.map-cap { font-size: 14px; color: var(--muted); margin-top: 10px }
+
+/* cases */
+.cases { display: grid; gap: 18px }
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; display: grid; grid-template-columns: 210px minmax(0, 1fr) }
+.case .tag { padding: 20px; border-right: 1px dashed var(--line); display: grid; align-content: start; gap: 10px }
+.case .loc { display: inline-block; justify-self: start; background: var(--mark); color: var(--mark-ink); padding: 3px 8px; border-radius: 2px; font-weight: 500 }
+.case .client { font-family: var(--display); font-weight: 700; font-size: 17px }
+.case .meta { font-size: 13.5px; color: var(--muted); line-height: 1.5 }
+.case .body { padding: 20px 22px; display: grid; gap: 12px; min-width: 0 }
+.case h3 { font-size: 21px; font-weight: 700 }
+.case dl { margin: 0; display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 8px 14px }
+.case dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); padding-top: 4px }
+.case dd { margin: 0; min-width: 0 }
+.case ul { margin: 0; padding-left: 18px }
+.case li + li { margin-top: 3px }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0 }
+.chips li { background: var(--accent-soft); color: var(--ink); border-radius: 3px; padding: 2px 9px; font-size: 13px; margin: 0 }
+
+.facts { display: flex; flex-wrap: wrap; gap: 6px 8px; list-style: none; margin: 6px 0 0; padding: 0 }
+.facts li { font-family: var(--mono); font-size: 12px; letter-spacing: .03em; border: 1px solid var(--line); border-radius: 3px; padding: 2px 8px; color: var(--ink); margin: 0 }
+.facts li .mv, .wins .mv { font-variant-numeric: tabular-nums }
+.wins { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px }
+.wins li { margin: 0; padding-left: 16px; position: relative }
+.wins li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; background: var(--mark); border-radius: 1px }
+
+/* document samples */
+.samples { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+.tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); background: var(--bg) }
+.tabs button { border: 0; border-right: 1px solid var(--line); background: none; padding: 11px 16px; font-size: 14px; font-weight: 600; color: var(--muted) }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--accent); box-shadow: inset 0 3px 0 var(--accent) }
+.panel { padding: 20px 22px; display: grid; gap: 14px }
+.panel .why { color: var(--muted); font-size: 14.5px; max-width: 70ch }
+.doc { border: 1px solid var(--line); border-radius: 4px; overflow-x: auto }
+.doc table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13.5px; line-height: 1.45 }
+.doc th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--bg); padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap }
+.doc td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top }
+.doc tr:last-child td { border-bottom: 0 }
+.doc td.id { font-family: var(--mono); font-size: 12px; white-space: nowrap }
+.doc ol { margin: 0; padding-left: 16px }
+.pill { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 1px 7px; border-radius: 3px; white-space: nowrap; border: 1px solid currentColor }
+.pill.ok { color: #2f7d4f } .pill.bad { color: #b4442f } .pill.cr { color: var(--accent) } .pill.new { color: #8a6a00 } .pill.out { color: var(--muted) }
+:root[data-theme="dark"] .pill.ok { color: #6fcf97 } :root[data-theme="dark"] .pill.bad { color: #f08a72 } :root[data-theme="dark"] .pill.new { color: #e8c45a }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pill.ok { color: #6fcf97 } :root:not([data-theme="light"]) .pill.bad { color: #f08a72 } :root:not([data-theme="light"]) .pill.new { color: #e8c45a } }
+.errs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px }
+.err { border: 1px solid var(--line); border-radius: 4px; padding: 14px; display: grid; gap: 6px; min-width: 0 }
+.err h4 { margin: 0; font-family: var(--display); font-size: 15px }
+.err p { font-size: 14px }
+.err p b { font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-right: 6px }
+.day { list-style: none; margin: 0; padding: 0; display: grid; border-left: 2px solid var(--accent); gap: 12px }
+.day li { margin: 0; padding-left: 16px; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 10px; font-size: 14.5px }
+.day time { font-family: var(--mono); font-size: 13px; color: var(--accent); font-variant-numeric: tabular-nums }
+.sample-note { font-size: 13px; color: var(--muted) }
+
+/* process */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; counter-reset: s }
+.steps li { counter-increment: s; border-top: 3px solid var(--accent); padding-top: 10px; min-width: 0 }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--mono); font-size: 12px; color: var(--muted); display: block }
+.steps b { display: block; font-family: var(--display); font-size: 16px; margin: 2px 0 4px }
+.steps span { font-size: 13.5px; color: var(--muted); line-height: 1.45; display: block }
+
+/* timeline */
+.timeline { display: grid; gap: 0; border-top: 1px solid var(--line) }
+.row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--line) }
+.row .when { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px }
+.row b { font-family: var(--display); font-size: 17px }
+.row .pos { color: var(--accent); font-weight: 600 }
+.row p { color: var(--muted); font-size: 15px; margin-top: 2px }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+.skills h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px }
+
+/* contact */
+.contact { background: var(--accent); color: var(--bg); border-radius: 6px; padding: 28px; display: grid; gap: 18px }
+.contact h2 { font-size: clamp(24px, 3.4vw, 30px); font-weight: 800 }
+.contact p { opacity: .9; max-width: 60ch }
+.lines { display: grid; gap: 10px }
+.line { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px }
+.line .k { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .8; width: 70px }
+.line .v { font-size: 18px; font-weight: 600; user-select: all; min-width: 0; overflow-wrap: anywhere }
+.copy { border: 1px solid currentColor; background: transparent; border-radius: 3px; padding: 2px 10px; font-size: 13px; color: var(--bg) }
+.contact a { color: var(--bg); font-weight: 600 }
+.cvlinks { display: flex; flex-wrap: wrap; gap: 10px }
+.cvlinks a { border: 1px solid currentColor; border-radius: 4px; padding: 7px 14px; text-decoration: none }
+footer { margin-top: 28px; font-size: 13px; color: var(--muted) }
+
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .stat { border-left: 0; padding-left: 0; border-top: 1px solid var(--line) }
+  .stat:nth-child(-n+2) { border-top: 0 }
+  .case { grid-template-columns: 1fr }
+  .case .tag { border-right: 0; border-bottom: 1px dashed var(--line) }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px }
+  .skills { grid-template-columns: 1fr }
+  .errs { grid-template-columns: 1fr }
+  .day li { grid-template-columns: 1fr; gap: 0 }
+  .row { grid-template-columns: 1fr; gap: 2px }
+}
+@media (max-width: 440px) {
+  .case dl { grid-template-columns: 1fr; gap: 2px }
+  .case dd { margin-bottom: 8px }
+  .contact { padding: 22px 18px }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .floor { animation: slide 14s linear infinite; background-size: 39.6px 100% }
+  @keyframes slide { to { background-position: 396px 0 } }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <span class="mono who">PTGB · HCMC · 2026</span>
+    <div class="toggle" role="group" aria-label="Language">
+      <button type="button" id="btn-vi" data-set="vi" aria-pressed="true">VI</button>
+      <button type="button" id="btn-en" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <span class="mono eyebrow">WMS · OMS · SAP · <span data-l="vi">Logistics &amp; Chuỗi cung ứng</span><span data-l="en">Logistics &amp; Supply Chain</span></span>
+    <h1>Phan Trần Gia Bảo</h1>
+    <p class="role"><span data-l="vi">Chuyên viên Hệ thống &amp; Vận hành Chuỗi cung ứng</span><span data-l="en">Supply Chain Systems &amp; Operations Specialist</span></p>
+    <p class="lead">
+      <span data-l="vi">Tôi là người cầu nối giữa vận hành kho và hệ thống chạy kho. Trong 16 tháng gần nhất, tôi đã đưa WMS/OMS kết nối SAP vào vận hành thực tế cho 4 doanh nghiệp phân phối, FMCG và logistics, từ thiết kế quy trình đến go-live và hypercare.</span>
+      <span data-l="en">I bridge warehouse operations and the systems that run them. Over the last 16 months I brought WMS/OMS platforms integrated with SAP into live operation for 4 distribution, FMCG and logistics companies, from process design through go-live and hypercare.</span>
+    </p>
+    <div class="floor" aria-hidden="true"></div>
+    <div class="actions">
+      <button type="button" class="btn" data-go="cases"><span data-l="vi">Xem dự án</span><span data-l="en">See projects</span></button>
+      <button type="button" class="btn ghost" data-go="docs"><span data-l="vi">Mẫu tài liệu</span><span data-l="en">Work samples</span></button>
+      <button type="button" class="btn ghost" data-go="contact"><span data-l="vi">Liên hệ</span><span data-l="en">Contact</span></button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>5+</b><span data-l="vi">năm phân tích nghiệp vụ &amp; triển khai hệ thống</span><span data-l="en">years in business analysis &amp; system implementation</span></div>
+      <div class="stat"><b>4</b><span data-l="vi">doanh nghiệp vận hành WMS/OMS</span><span data-l="en">companies running WMS/OMS live</span></div>
+      <div class="stat"><b>6</b><span data-l="vi">hệ thống liên thông trong go-live PGI</span><span data-l="en">connected systems in the PGI go-live</span></div>
+      <div class="stat"><b>~85</b><span data-l="vi">yêu cầu / CR quản lý trên Jira</span><span data-l="en">requirements / CRs managed in Jira</span></div>
+      <div class="stat"><b>23</b><span data-l="vi">dự án được rà soát dữ liệu gốc</span><span data-l="en">projects with master data audited</span></div>
+    </div>
+  </header>
+
+  <section class="block" id="map">
+    <div class="head">
+      <span class="mono"><span data-l="vi">Bức tranh hệ thống</span><span data-l="en">System landscape</span></span>
+      <h2><span data-l="vi">Một đơn hàng đi qua những hệ thống nào</span><span data-l="en">Where one order travels</span></h2>
+      <p><span data-l="vi">Sơ đồ dự án PGI (go-live 11/2025). Phần việc của tôi nằm ở các mũi tên: dữ liệu đi đúng, lệch thì phát hiện sớm và xử lý tận gốc.</span><span data-l="en">The PGI landscape (go-live 11/2025). My work lives on the arrows: data flows correctly, and mismatches are caught early and fixed at the root.</span></p>
+    </div>
+    <div class="map">
+      <svg viewBox="0 0 680 250" role="img" aria-label="DMS, e-commerce and warranty feed OMS; OMS sends orders to WMS and SAP; WMS syncs inventory with SAP">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow" d="M0 0 L10 5 L0 10 z"/></marker>
+          <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow main" d="M0 0 L10 5 L0 10 z"/></marker>
+        </defs>
+        <path class="edge" d="M150 45 C 195 45, 195 110, 236 118" marker-end="url(#ah)"/>
+        <path class="edge" d="M150 125 L 236 125" marker-end="url(#ah)"/>
+        <path class="edge" d="M150 205 C 195 205, 195 140, 236 132" marker-end="url(#ah)"/>
+        <path class="edge main" d="M380 112 C 440 112, 450 50, 506 48" marker-end="url(#ahm)"/>
+        <path class="edge main" d="M380 138 C 440 138, 450 200, 506 202" marker-end="url(#ahm)"/>
+        <path class="edge main" d="M580 178 L 580 76" marker-start="url(#ahm)" marker-end="url(#ahm)"/>
+        <text class="lbl" x="412" y="62" data-l="vi">bút toán</text><text class="lbl" x="412" y="62" data-l="en">postings</text>
+        <text class="lbl" x="412" y="196" data-l="vi">lệnh xuất</text><text class="lbl" x="412" y="196" data-l="en">pick orders</text>
+        <text class="lbl" x="590" y="131" data-l="vi">tồn kho</text><text class="lbl" x="590" y="131" data-l="en">inventory</text>
+        <text class="lbl" x="160" y="110">sync</text>
+
+        <g class="node"><rect x="20" y="20" width="130" height="50" rx="5"/><text x="36" y="44">DMS</text><text class="sub" x="36" y="60" data-l="vi">bán hàng kênh truyền thống</text><text class="sub" x="36" y="60" data-l="en">sales force</text></g>
+        <g class="node"><rect x="20" y="100" width="130" height="50" rx="5"/><text x="36" y="124" data-l="vi">TMĐT</text><text x="36" y="124" data-l="en">E-commerce</text><text class="sub" x="36" y="140" data-l="vi">sàn online</text><text class="sub" x="36" y="140" data-l="en">marketplaces</text></g>
+        <g class="node"><rect x="20" y="180" width="130" height="50" rx="5"/><text x="36" y="204" data-l="vi">Bảo hành</text><text x="36" y="204" data-l="en">Warranty</text><text class="sub" x="36" y="220" data-l="vi">hàng trả về</text><text class="sub" x="36" y="220" data-l="en">returns</text></g>
+        <g class="node core"><rect x="240" y="98" width="140" height="54" rx="5"/><text x="256" y="123">OMS</text><text class="sub" x="256" y="140" data-l="vi">quản lý đơn hàng</text><text class="sub" x="256" y="140" data-l="en">order management</text></g>
+        <g class="node core"><rect x="510" y="22" width="140" height="54" rx="5"/><text x="526" y="47">SAP</text><text class="sub" x="526" y="64" data-l="vi">kế toán, tồn sổ sách</text><text class="sub" x="526" y="64" data-l="en">finance, book stock</text></g>
+        <g class="node core"><rect x="510" y="178" width="140" height="54" rx="5"/><text x="526" y="203">WMS</text><text class="sub" x="526" y="220" data-l="vi">nhập, xuất, tồn thực</text><text class="sub" x="526" y="220" data-l="en">inbound, outbound, stock</text></g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="block" id="cases">
+    <div class="head">
+      <span class="mono"><span data-l="vi">Dự án tiêu biểu</span><span data-l="en">Selected projects</span></span>
+      <h2><span data-l="vi">Việc đã làm, kể ngắn</span><span data-l="en">What I did, briefly</span></h2>
+    </div>
+    <div class="cases">
+
+      <article class="case">
+        <div class="tag">
+          <span class="mono loc">PGI · 11/2025</span>
+          <span class="client">PGI</span>
+          <span class="meta"><span data-l="vi">Phân phối đa kênh · OMS + WMS + SAP</span><span data-l="en">Multi-channel distribution · OMS + WMS + SAP</span></span>
+        </div>
+        <div class="body">
+          <h3><span data-l="vi">Từ UAT đến go-live trên 6 hệ thống liên thông</span><span data-l="en">From UAT to go-live across 6 connected systems</span></h3>
+          <dl>
+            <dt><span data-l="vi">Phạm vi</span><span data-l="en">Scope</span></dt>
+            <dd><span data-l="vi">6 hệ thống liên thông (OMS, WMS, SAP, bảo hành, DMS, TMĐT), 3 nhà cung cấp đối tác. Nền tảng Smartlog SOM (OMS) và SWM (WMS).</span><span data-l="en">6 connected systems (OMS, WMS, SAP, warranty, DMS, e-commerce), 3 partner vendors. Platforms: Smartlog SOM (OMS) and SWM (WMS).</span>
+              <ul class="facts">
+                <li data-m="warehouses" hidden><span class="mv"></span> <span data-l="vi">kho</span><span data-l="en">warehouses</span></li>
+                <li data-m="skus" hidden><span class="mv"></span> SKU</li>
+                <li data-m="ordersPerDay" hidden><span class="mv"></span> <span data-l="vi">đơn/ngày</span><span data-l="en">orders/day</span></li>
+                <li data-m="usersTrained" hidden><span class="mv"></span> <span data-l="vi">người dùng được đào tạo</span><span data-l="en">users trained</span></li>
+              </ul>
+            </dd>
+            <dt><span data-l="vi">Bài toán</span><span data-l="en">Problem</span></dt>
+            <dd><span data-l="vi">Đơn từ DMS, sàn TMĐT và hàng bảo hành phải chảy qua OMS, WMS và SAP mà không lệch tồn kho hay doanh thu. Mỗi hệ thống do một bên khác nhau phụ trách, nên một lỗi đồng bộ có thể kéo theo cả ba bên.</span><span data-l="en">Orders from DMS, marketplaces and warranty returns had to flow through OMS, WMS and SAP without stock or revenue mismatches. Each system was owned by a different party, so one sync error could involve all three vendors.</span></dd>
+            <dt><span data-l="vi">Tôi làm</span><span data-l="en">My part</span></dt>
+            <dd><ul>
+              <li><span data-l="vi">Thiết kế quy trình To-Be cho bán hàng DMS, TMĐT, hàng trả về bảo hành, chuyển kho nội bộ.</span><span data-l="en">Designed To-Be flows for DMS sales, e-commerce, warranty returns and inter-warehouse transfers.</span></li>
+              <li><span data-l="vi">Theo dõi lỗi đồng bộ hằng ngày, chạy lại và xử lý tận gốc trước go-live.</span><span data-l="en">Ran daily sync-error monitoring, retries and root-cause fixes before go-live.</span></li>
+              <li><span data-l="vi">Đầu mối sự cố khẩn khi vận hành: lệch OMS–SAP, lệch doanh thu DMS–SAP; chốt phạm vi sửa bằng văn bản.</span><span data-l="en">Primary contact for urgent incidents (OMS–SAP and DMS–SAP revenue mismatches); agreed fix scope in writing.</span></li>
+            </ul></dd>
+            <dt><span data-l="vi">Kết quả</span><span data-l="en">Result</span></dt>
+            <dd><ul class="wins">
+              <li><span data-l="vi">Go-live 11/2025, qua hypercare và bàn giao hệ thống ổn định cho đội hỗ trợ.</span><span data-l="en">Live in 11/2025; completed hypercare and handed a stable system to the support team.</span></li>
+              <li data-m="syncErrorDrop" hidden><span data-l="vi">Lỗi đồng bộ giảm <b class="mv"></b>% sau khi có quy trình theo dõi hằng ngày.</span><span data-l="en">Sync errors cut by <b class="mv"></b>% after daily monitoring was in place.</span></li>
+              <li data-m="incidentHours" hidden><span data-l="vi">Sự cố khẩn được xử lý trong vòng <b class="mv"></b> giờ.</span><span data-l="en">Urgent incidents resolved within <b class="mv"></b> hours.</span></li>
+            </ul></dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">
+          <span class="mono loc">INV · STATUS</span>
+          <span class="client"><span data-l="vi">Giải pháp tồn kho</span><span data-l="en">Inventory solution</span></span>
+          <span class="meta"><span data-l="vi">WMS × SAP · kế toán chi phí</span><span data-l="en">WMS × SAP · cost accounting</span></span>
+        </div>
+        <div class="body">
+          <h3><span data-l="vi">Đổi trạng thái tồn kho mà không cần phát triển lớn</span><span data-l="en">Changing inventory status without a large development</span></h3>
+          <dl>
+            <dt><span data-l="vi">Bài toán</span><span data-l="en">Problem</span></dt>
+            <dd><span data-l="vi">Khách hàng cần chuyển hàng giữa các trạng thái tồn (đạt, chờ kiểm, hư hỏng). Phương án ban đầu là một chức năng mới tốn nhiều công phát triển.</span><span data-l="en">The client needed to move stock between statuses (unrestricted, QC hold, damaged). The first proposal was a new feature with a large development effort.</span></dd>
+            <dt><span data-l="vi">Tôi làm</span><span data-l="en">My part</span></dt>
+            <dd><span data-l="vi">Đề xuất dùng cặp chứng từ nhập/xuất có sẵn, ước tính 2 tuần. Trình bày đánh đổi và ảnh hưởng kế toán chi phí SAP cho lãnh đạo IT và nghiệp vụ của khách hàng.</span><span data-l="en">Proposed a paired inbound/outbound transaction using existing documents, estimated at 2 weeks. Presented the trade-offs and the SAP cost-accounting impact to the client's IT and business leads.</span></dd>
+            <dt><span data-l="vi">Bài học</span><span data-l="en">Takeaway</span></dt>
+            <dd><span data-l="vi">Tách rõ phần cấu hình và phần phát triển thêm giúp giữ phạm vi dự án và tiến độ.</span><span data-l="en">Separating configuration from custom development keeps scope and timeline under control.</span></dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">
+          <span class="mono loc">EDI · XML</span>
+          <span class="client">VILUBE (Motul) · KIDO × FM Logistic</span>
+          <span class="meta"><span data-l="vi">Tích hợp WMS × SAP</span><span data-l="en">WMS × SAP integration</span></span>
+        </div>
+        <div class="body">
+          <h3><span data-l="vi">Tích hợp WMS với SAP: mapping, kiểm thử, nghiệm thu</span><span data-l="en">WMS–SAP integration: mapping, testing, sign-off</span></h3>
+          <dl>
+            <dt><span data-l="vi">Tôi làm</span><span data-l="en">My part</span></dt>
+            <dd><ul>
+              <li><span data-l="vi">Xây dựng quy tắc mapping XML/EDI cho luồng nhập, xuất, chuyển kho giữa WMS và SAP của VILUBE.</span><span data-l="en">Defined XML/EDI mapping rules for VILUBE's inbound, outbound and transfer flows between WMS and SAP.</span></li>
+              <li><span data-l="vi">Viết kịch bản SIT/UAT tích hợp: dữ liệu gốc, trạng thái tồn, luồng nhập/xuất.</span><span data-l="en">Wrote integrated SIT/UAT scripts covering master data, inventory status and inbound/outbound flows.</span></li>
+              <li><span data-l="vi">Kiểm thử và nghiệm thu tích hợp WMS–SAP cho KIDO × FM Logistic (3PL).</span><span data-l="en">Tested and signed off the WMS–SAP integration for KIDO × FM Logistic (3PL).</span></li>
+            </ul></dd>
+            <dt><span data-l="vi">Dùng lại</span><span data-l="en">Reuse</span></dt>
+            <dd><span data-l="vi">Bộ kịch bản UAT, hướng dẫn sử dụng và sổ tay lỗi thường gặp nay là mẫu cho dự án mới.</span><span data-l="en">The UAT scripts, user guides and common-error playbook are now templates for new projects.</span></dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">
+          <span class="mono loc">AUTO · AI</span>
+          <span class="client"><span data-l="vi">Tự động hóa nội bộ</span><span data-l="en">Internal automation</span></span>
+          <span class="meta">Playwright · Jira · AI</span>
+        </div>
+        <div class="body">
+          <h3><span data-l="vi">Công cụ giúp đội triển khai làm nhanh hơn</span><span data-l="en">Tools that make the implementation team faster</span></h3>
+          <dl>
+            <dt><span data-l="vi">Tôi làm</span><span data-l="en">My part</span></dt>
+            <dd><ul>
+              <li><span data-l="vi">Bộ test tự động cho WMS (web và app Android): sinh test case SIT/UAT, chạy theo kịch bản và ghi Passed/Failed vào biên bản.</span><span data-l="en">Automated test suite for the WMS (web and Android app): generates SIT/UAT test cases, runs them and writes Passed/Failed into the test record.</span></li>
+              <li><span data-l="vi">Công cụ AI phân loại CR (Lỗi / CR / Phát triển mới / Ngoài phạm vi), báo cáo standup và dashboard Jira.</span><span data-l="en">AI tools for CR classification (Issue / CR / New development / Out of scope), stand-up reports and Jira dashboards.</span></li>
+              <li><span data-l="vi">Quản lý ~85 yêu cầu/CR, chuẩn hóa cách phân loại cho toàn phòng; hướng dẫn 1 thực tập sinh làm việc độc lập.</span><span data-l="en">Managed ~85 requirements/CRs and standardized classification across the department; coached 1 intern to work independently.</span></li>
+            </ul></dd>
+            <dt data-m="hoursSaved" hidden><span data-l="vi">Kết quả</span><span data-l="en">Result</span></dt>
+            <dd data-m="hoursSaved" hidden><ul class="wins"><li><span data-l="vi">Tiết kiệm khoảng <b class="mv"></b> giờ mỗi tuần cho đội triển khai.</span><span data-l="en">Saves the implementation team about <b class="mv"></b> hours per week.</span></li></ul></dd>
+          </dl>
+          <ul class="chips"><li>Playwright</li><li>Jira</li><li>Google Sheets</li><li>Claude</li><li>REST API</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="docs">
+    <div class="head">
+      <span class="mono"><span data-l="vi">Mẫu tài liệu</span><span data-l="en">Work samples</span></span>
+      <h2><span data-l="vi">Tài liệu tôi viết khi triển khai</span><span data-l="en">Documents I write during a rollout</span></h2>
+      <p><span data-l="vi">Trích theo đúng định dạng tôi dùng ở dự án. Tên khách hàng, mã hàng và số chứng từ đã được thay bằng dữ liệu mẫu.</span><span data-l="en">Excerpts in the formats I use on projects. Client names, item codes and document numbers are replaced with sample data.</span></p>
+    </div>
+    <div class="samples">
+      <div class="tabs" role="tablist" aria-label="Samples">
+        <button type="button" role="tab" id="tab-uat" aria-controls="p-uat" aria-selected="true"><span data-l="vi">Kịch bản UAT</span><span data-l="en">UAT script</span></button>
+        <button type="button" role="tab" id="tab-err" aria-controls="p-err" aria-selected="false"><span data-l="vi">Sổ tay lỗi</span><span data-l="en">Error playbook</span></button>
+        <button type="button" role="tab" id="tab-cr" aria-controls="p-cr" aria-selected="false"><span data-l="vi">Phân loại CR</span><span data-l="en">CR triage</span></button>
+        <button type="button" role="tab" id="tab-hc" aria-controls="p-hc" aria-selected="false">Hypercare</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-uat" aria-labelledby="tab-uat">
+        <p class="why"><span data-l="vi">Kịch bản UAT tích hợp WMS × SAP: mỗi case ghi rõ dữ liệu đi từ hệ thống nào sang hệ thống nào, điều kiện ban đầu và kết quả kiểm được trên cả hai phía.</span><span data-l="en">Integrated WMS × SAP UAT script: each case states which system sends data to which, the starting conditions, and the result checked on both sides.</span></p>
+        <div class="doc"><table>
+          <thead><tr><th>ID</th><th><span data-l="vi">Từ → Đến</span><span data-l="en">From → To</span></th><th><span data-l="vi">Thông tin ban đầu</span><span data-l="en">Preconditions</span></th><th><span data-l="vi">Các bước</span><span data-l="en">Steps</span></th><th><span data-l="vi">Kết quả mong đợi</span><span data-l="en">Expected result</span></th><th>UAT</th></tr></thead>
+          <tbody>
+            <tr><td class="id">IB01-03</td><td>SAP → WMS</td>
+              <td><span data-l="vi">PO đã duyệt trên SAP; SKU quản lý theo lô</span><span data-l="en">PO approved in SAP; batch-managed SKU</span></td>
+              <td><ol><li><span data-l="vi">Tạo PO 4500000123 trên SAP</span><span data-l="en">Create PO 4500000123 in SAP</span></li><li><span data-l="vi">Kiểm tra phiếu nhập trên WMS</span><span data-l="en">Check the inbound order in WMS</span></li><li><span data-l="vi">Nhận hàng, nhập số lô và hạn dùng</span><span data-l="en">Receive, enter batch and expiry</span></li></ol></td>
+              <td><span data-l="vi">WMS sinh phiếu nhập đúng số lượng; sau khi nhận, SAP ghi nhận nhập kho đúng lô</span><span data-l="en">WMS creates the inbound order with correct quantities; after receipt, SAP posts the goods receipt to the right batch</span></td>
+              <td><span class="pill ok">Passed</span></td></tr>
+            <tr><td class="id">OB02-05</td><td>WMS → SAP</td>
+              <td><span data-l="vi">Đơn bán đã duyệt; tồn đủ ở trạng thái đạt</span><span data-l="en">Sales order approved; enough unrestricted stock</span></td>
+              <td><ol><li><span data-l="vi">Tạo lệnh xuất</span><span data-l="en">Create the outbound order</span></li><li><span data-l="vi">Lấy hàng theo FEFO</span><span data-l="en">Pick by FEFO</span></li><li><span data-l="vi">Xác nhận giao hàng</span><span data-l="en">Confirm shipment</span></li></ol></td>
+              <td><span data-l="vi">WMS chọn lô hết hạn sớm nhất; SAP trừ tồn đúng lô</span><span data-l="en">WMS picks the earliest-expiring batch; SAP deducts stock from that batch</span></td>
+              <td><span class="pill ok">Passed</span></td></tr>
+            <tr><td class="id">INV-02</td><td>WMS → SAP</td>
+              <td><span data-l="vi">Hàng đang ở trạng thái chờ kiểm</span><span data-l="en">Stock in QC-hold status</span></td>
+              <td><ol><li><span data-l="vi">Chuyển trạng thái sang hư hỏng</span><span data-l="en">Change status to damaged</span></li><li><span data-l="vi">Kiểm tra tồn trên SAP</span><span data-l="en">Check stock in SAP</span></li></ol></td>
+              <td><span data-l="vi">SAP chuyển đúng trạng thái, tổng tồn không đổi</span><span data-l="en">SAP moves the stock to the new status; total stock unchanged</span></td>
+              <td><span class="pill bad">Failed</span> → <span class="pill ok">Passed</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-err" aria-labelledby="tab-err" hidden>
+        <p class="why"><span data-l="vi">Sổ tay lỗi thường gặp cho đội vận hành và đội hỗ trợ: tự xử lý được lỗi quen thuộc mà không cần chờ tư vấn.</span><span data-l="en">Common-error playbook for operations and support teams, so familiar errors get fixed without waiting for a consultant.</span></p>
+        <div class="errs">
+          <div class="err"><h4><span data-l="vi">Phiếu nhập kẹt ở "chờ đồng bộ" sang SAP</span><span data-l="en">Receipt stuck in "pending sync" to SAP</span></h4>
+            <p><b><span data-l="vi">Nguyên nhân</span><span data-l="en">Cause</span></b><span data-l="vi">Mã lô chưa tồn tại trên SAP.</span><span data-l="en">The batch does not exist in SAP yet.</span></p>
+            <p><b><span data-l="vi">Xử lý</span><span data-l="en">Fix</span></b><span data-l="vi">Tạo dữ liệu lô trên SAP, chạy lại bản ghi lỗi.</span><span data-l="en">Create the batch master in SAP, then retry the failed record.</span></p>
+            <p><b><span data-l="vi">Phòng ngừa</span><span data-l="en">Prevent</span></b><span data-l="vi">Kiểm tra dữ liệu gốc của lô trước khi nhận hàng.</span><span data-l="en">Check batch master data before receiving.</span></p></div>
+          <div class="err"><h4><span data-l="vi">Lệch tồn WMS–SAP cuối ngày</span><span data-l="en">End-of-day WMS–SAP stock mismatch</span></h4>
+            <p><b><span data-l="vi">Nguyên nhân</span><span data-l="en">Cause</span></b><span data-l="vi">Phiếu điều chỉnh tạo tay trên SAP, không đi qua WMS.</span><span data-l="en">A manual adjustment was posted in SAP without going through WMS.</span></p>
+            <p><b><span data-l="vi">Xử lý</span><span data-l="en">Fix</span></b><span data-l="vi">Đối soát theo SKU và lô, tạo phiếu điều chỉnh tương ứng.</span><span data-l="en">Reconcile by SKU and batch, then post the matching adjustment.</span></p>
+            <p><b><span data-l="vi">Phòng ngừa</span><span data-l="en">Prevent</span></b><span data-l="vi">Mọi điều chỉnh tồn phải bắt đầu từ WMS.</span><span data-l="en">All stock adjustments start in WMS.</span></p></div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-cr" aria-labelledby="tab-cr" hidden>
+        <p class="why"><span data-l="vi">Mỗi yêu cầu được đối chiếu với thiết kế To-Be đã duyệt và hợp đồng trước khi xếp loại. Cách phân loại này nay dùng chung cho toàn phòng.</span><span data-l="en">Each request is checked against the approved To-Be design and the contract before it is classified. This scheme is now used across the department.</span></p>
+        <div class="doc"><table>
+          <thead><tr><th><span data-l="vi">Yêu cầu</span><span data-l="en">Request</span></th><th><span data-l="vi">Đối chiếu</span><span data-l="en">Checked against</span></th><th><span data-l="vi">Phân loại</span><span data-l="en">Class</span></th></tr></thead>
+          <tbody>
+            <tr><td><span data-l="vi">Hủy đơn đã xuất nhưng WMS không hoàn tồn</span><span data-l="en">Cancelled shipped order does not return stock in WMS</span></td><td><span data-l="vi">Trái với To-Be đã duyệt</span><span data-l="en">Contradicts approved To-Be</span></td><td><span class="pill bad"><span data-l="vi">Lỗi</span><span data-l="en">Issue</span></span></td></tr>
+            <tr><td><span data-l="vi">Thêm bước duyệt khi đổi trạng thái tồn</span><span data-l="en">Add an approval step to status changes</span></td><td><span data-l="vi">Thay đổi so với To-Be</span><span data-l="en">Changes the To-Be</span></td><td><span class="pill cr">CR</span></td></tr>
+            <tr><td><span data-l="vi">Báo cáo tồn theo kênh bán</span><span data-l="en">Stock report by sales channel</span></td><td><span data-l="vi">Chưa có trong thiết kế</span><span data-l="en">Not in the design</span></td><td><span class="pill new"><span data-l="vi">Phát triển mới</span><span data-l="en">New development</span></span></td></tr>
+            <tr><td><span data-l="vi">Kết nối thêm một phần mềm kế toán</span><span data-l="en">Connect another accounting system</span></td><td><span data-l="vi">Ngoài hợp đồng</span><span data-l="en">Outside the contract</span></td><td><span class="pill out"><span data-l="vi">Ngoài phạm vi</span><span data-l="en">Out of scope</span></span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-hc" aria-labelledby="tab-hc" hidden>
+        <p class="why"><span data-l="vi">Lịch theo dõi một ngày trong giai đoạn hypercare sau go-live: phát hiện lệch dữ liệu trong ngày, không để dồn đến cuối tháng.</span><span data-l="en">One day of the post-go-live hypercare routine: catch data mismatches the same day instead of at month-end.</span></p>
+        <ul class="day">
+          <li><time>08:30</time><span data-l="vi">Kiểm tra hàng đợi đồng bộ OMS/WMS → SAP; chạy lại các bản ghi lỗi.</span><span data-l="en">Check the OMS/WMS → SAP sync queue; retry failed records.</span></li>
+          <li><time>10:00</time><span data-l="vi">Đối soát tồn WMS–SAP cho các SKU và lô có biến động hôm trước.</span><span data-l="en">Reconcile WMS–SAP stock for SKUs and batches that moved the day before.</span></li>
+          <li><time>14:00</time><span data-l="vi">Họp ngắn về sự cố với khách hàng và các nhà cung cấp đối tác.</span><span data-l="en">Short incident call with the client and partner vendors.</span></li>
+          <li><time>17:00</time><span data-l="vi">Cập nhật nhật ký sự cố: nguyên nhân gốc, hướng xử lý, người phụ trách, hạn xong.</span><span data-l="en">Update the incident log: root cause, fix, owner, due date.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="sample-note"><span data-l="vi">Bản đầy đủ có thể trao đổi khi phỏng vấn, trong giới hạn cam kết bảo mật với khách hàng.</span><span data-l="en">Full versions can be discussed at interview, within client confidentiality limits.</span></p>
+  </section>
+
+  <section class="block" id="process">
+    <div class="head">
+      <span class="mono"><span data-l="vi">Cách tôi làm</span><span data-l="en">How I work</span></span>
+      <h2><span data-l="vi">Một vòng triển khai hệ thống kho</span><span data-l="en">One warehouse system rollout</span></h2>
+    </div>
+    <ol class="steps">
+      <li><b><span data-l="vi">Khảo sát</span><span data-l="en">Discover</span></b><span data-l="vi">Đi kho, ghi nhận quy trình As-Is và điểm nghẽn.</span><span data-l="en">Walk the warehouse, map As-Is flows and pain points.</span></li>
+      <li><b>To-Be</b><span data-l="vi">Thiết kế quy trình, tách cấu hình và phát triển thêm.</span><span data-l="en">Design flows; split configuration from custom work.</span></li>
+      <li><b><span data-l="vi">Tích hợp</span><span data-l="en">Integrate</span></b><span data-l="vi">Mapping dữ liệu với SAP, DMS, sàn TMĐT.</span><span data-l="en">Map data with SAP, DMS, marketplaces.</span></li>
+      <li><b>SIT / UAT</b><span data-l="vi">Kịch bản test, dữ liệu test, nghiệm thu.</span><span data-l="en">Test scripts, test data, sign-off.</span></li>
+      <li><b>Go-live</b><span data-l="vi">Đào tạo người dùng, SOP, chuyển dữ liệu.</span><span data-l="en">User training, SOPs, data cutover.</span></li>
+      <li><b>Hypercare</b><span data-l="vi">Theo dõi lỗi, xử lý tận gốc, bàn giao.</span><span data-l="en">Monitor, fix root causes, hand over.</span></li>
+    </ol>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="head">
+      <span class="mono"><span data-l="vi">Kinh nghiệm</span><span data-l="en">Experience</span></span>
+      <h2><span data-l="vi">Hơn 5 năm, 4 ngành</span><span data-l="en">5+ years across 4 industries</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="row"><span class="when">07/2025 – <span data-l="vi">nay</span><span data-l="en">now</span></span><div><b>Smartlog Supply Chain Solutions</b> · <span class="pos">Senior Implementation Consultant</span><p><span data-l="vi">Phần mềm chuỗi cung ứng (WMS, TMS, OMS) cho nhà sản xuất, nhà phân phối và 3PL.</span><span data-l="en">Supply chain software (WMS, TMS, OMS) for manufacturers, distributors and 3PLs.</span></p></div></div>
+      <div class="row"><span class="when">07/2023 – 06/2025</span><div><b>Eximbank</b> · <span class="pos">Business Analyst</span><p><span data-l="vi">Ngân hàng số: vay, tiền gửi, chuyển tiền; dự án eKYC xác thực với dữ liệu dân cư.</span><span data-l="en">Digital banking: loans, deposits, transfers; eKYC project with national ID verification.</span></p></div></div>
+      <div class="row"><span class="when">03/2022 – 03/2023</span><div><b>VMG Fashion Group</b> · <span class="pos">Business Analyst</span><p><span data-l="vi">Triển khai Odoo ERP cho 300 nhân viên và 35 cửa hàng.</span><span data-l="en">Odoo ERP rollout for 300 staff and 35 stores.</span></p></div></div>
+      <div class="row"><span class="when">03/2021 – 03/2022</span><div><b>APE Tech</b> · <span class="pos">Implementation Consultant</span><p><span data-l="vi">Phân tích yêu cầu, đề xuất giải pháp, viết user story.</span><span data-l="en">Requirements analysis, solution proposals, user stories.</span></p></div></div>
+      <div class="row"><span class="when">2017 – 2021</span><div><b><span data-l="vi">ĐH Bách Khoa TP.HCM</span><span data-l="en">Ho Chi Minh City University of Technology</span></b><p><span data-l="vi">Logistics và Quản lý chuỗi cung ứng</span><span data-l="en">Logistics and Supply Chain Management</span></p></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="head">
+      <span class="mono"><span data-l="vi">Kỹ năng</span><span data-l="en">Skills</span></span>
+    </div>
+    <div class="skills">
+      <div><h3><span data-l="vi">Nghiệp vụ kho</span><span data-l="en">Warehouse domain</span></h3><ul class="chips">
+        <li data-l="vi">Nhập / xuất kho</li><li data-l="en">Inbound / outbound</li>
+        <li data-l="vi">Lô &amp; hạn dùng</li><li data-l="en">Batch &amp; expiry</li>
+        <li data-l="vi">Chuyển kho, trả về, thu hồi</li><li data-l="en">Transfers, returns, recalls</li>
+        <li data-l="vi">Trạng thái tồn kho</li><li data-l="en">Inventory status</li>
+        <li data-l="vi">Phân phối đa kênh</li><li data-l="en">Multi-channel distribution</li>
+      </ul></div>
+      <div><h3><span data-l="vi">Hệ thống &amp; tích hợp</span><span data-l="en">Systems &amp; integration</span></h3><ul class="chips">
+        <li>WMS</li><li>OMS</li><li>TMS</li><li data-l="vi">Tích hợp SAP</li><li data-l="en">SAP integration</li><li>DMS</li><li>Odoo ERP</li><li>REST API</li><li data-l="vi">Mapping XML/EDI</li><li data-l="en">XML/EDI mapping</li>
+      </ul></div>
+      <div><h3><span data-l="vi">Triển khai</span><span data-l="en">Delivery</span></h3><ul class="chips">
+        <li>SIT / UAT</li><li>Go-live / Hypercare</li><li data-l="vi">Phân tích nguyên nhân gốc</li><li data-l="en">Root-cause analysis</li><li>SOP</li><li data-l="vi">Quản lý CR</li><li data-l="en">CR management</li><li>Jira</li><li>Figma</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="contact">
+      <h2><span data-l="vi">Liên hệ</span><span data-l="en">Get in touch</span></h2>
+      <p><span data-l="vi">Tôi đang tìm vị trí dự án, giải pháp hoặc hệ thống trong ngành logistics và chuỗi cung ứng tại TP.HCM.</span><span data-l="en">I am looking for project, solution or systems roles in logistics and supply chain in Ho Chi Minh City.</span></p>
+      <div class="lines">
+        <div class="line"><span class="k">Email</span><span class="v" id="v-mail">bao.phantg@gmail.com</span><button type="button" class="copy" data-copy="v-mail"><span data-l="vi">Sao chép</span><span data-l="en">Copy</span></button></div>
+        <div class="line"><span class="k"><span data-l="vi">Điện thoại</span><span data-l="en">Phone</span></span><span class="v" id="v-phone">0962 661 341</span><button type="button" class="copy" data-copy="v-phone"><span data-l="vi">Sao chép</span><span data-l="en">Copy</span></button></div>
+      </div>
+      <div class="cvlinks">
+        <a href="cv-phan-tran-gia-bao-vi.pdf" target="_blank" rel="noopener">CV (Tiếng Việt)</a>
+        <a href="cv-phan-tran-gia-bao-en.pdf" target="_blank" rel="noopener">CV (English)</a>
+      </div>
+    </div>
+    <footer><span data-l="vi">Tên khách hàng được nêu ở mức dự án; chi tiết nội bộ được giữ kín theo cam kết bảo mật.</span><span data-l="en">Client names are given at project level; internal details are kept confidential.</span></footer>
+  </section>
+</div>
+
+<script>
+/* Result and scale figures. Fill a value and its line appears on the page; leave null to keep it hidden. */
+var METRICS = {
+  syncErrorDrop: null,   // % lỗi đồng bộ giảm
+  incidentHours: null,   // số giờ xử lý sự cố khẩn
+  hoursSaved: null,      // số giờ tiết kiệm mỗi tuần nhờ công cụ
+  warehouses: null,      // số kho
+  skus: null,            // số SKU
+  ordersPerDay: null,    // số đơn mỗi ngày
+  usersTrained: null     // số người dùng đã đào tạo
+};
+(function () {
+  var root = document.documentElement;
+  document.querySelectorAll('[data-m]').forEach(function (el) {
+    var v = METRICS[el.dataset.m];
+    if (v === null || v === undefined || v === '') return;
+    el.querySelectorAll('.mv').forEach(function (s) { s.textContent = v; });
+    el.hidden = false;
+  });
+  var tabs = document.querySelectorAll('[role="tab"]');
+  function pick(t) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute('aria-selected', on);
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.tabIndex = i === 0 ? 0 : -1;
+    t.addEventListener('click', function () { pick(t); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      var n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus();
+    });
+  });
+  function setLang(l) {
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l);
+    document.getElementById('btn-vi').setAttribute('aria-pressed', l === 'vi');
+    document.getElementById('btn-en').setAttribute('aria-pressed', l === 'en');
+    try { localStorage.setItem('pf-lang', l); } catch (e) {}
+  }
+  var start = 'vi';
+  if (location.hash === '#en') start = 'en';
+  else if (location.hash !== '#vi') { try { start = localStorage.getItem('pf-lang') || 'vi'; } catch (e) {} }
+  setLang(start);
+  document.querySelectorAll('[data-set]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.set); });
+  });
+  window.addEventListener('hashchange', function () {
+    if (location.hash === '#en' || location.hash === '#vi') setLang(location.hash.slice(1));
+  });
+  document.querySelectorAll('[data-go]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = document.getElementById(b.dataset.go);
+      if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.dataset.copy);
+      var done = function () { var o = b.innerHTML; b.textContent = root.dataset.lang === 'en' ? 'Copied' : 'Đã chép'; setTimeout(function () { b.innerHTML = o; }, 1500); };
+      var select = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+      try { navigator.clipboard.writeText(el.textContent.trim()).then(done, select); } catch (e) { select(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
