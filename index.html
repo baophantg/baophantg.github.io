@@ -124,6 +124,12 @@ section.block { margin-top: 56px; display: grid; gap: 20px }
 .wins li { margin: 0; padding-left: 16px; position: relative }
 .wins li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; background: var(--mark); border-radius: 1px }
 
+.soe { display: grid; gap: 8px }
+.gates { list-style: none; margin: 2px 0 0; padding: 0; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px }
+.gates li { margin: 0; background: var(--accent-soft); border-radius: 3px; padding: 6px 3px; text-align: center; font-size: 11px; line-height: 1.25; min-width: 0; overflow-wrap: anywhere }
+.gates b { display: block; font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--accent) }
+@media (max-width: 760px) { .gates { grid-template-columns: repeat(5, minmax(0, 1fr)) } }
+
 /* document samples */
 .samples { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
 .tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); background: var(--bg) }
@@ -224,8 +230,8 @@ footer { margin-top: 28px; font-size: 13px; color: var(--muted) }
     <h1>Phan Trần Gia Bảo</h1>
     <p class="role"><span data-l="vi">Chuyên viên Hệ thống &amp; Vận hành Chuỗi cung ứng</span><span data-l="en">Supply Chain Systems &amp; Operations Specialist</span></p>
     <p class="lead">
-      <span data-l="vi">Tôi là người cầu nối giữa vận hành kho và hệ thống chạy kho. Trong 16 tháng gần nhất, tôi đã đưa WMS/OMS kết nối SAP vào vận hành thực tế cho 4 doanh nghiệp phân phối, FMCG và logistics, từ thiết kế quy trình đến go-live và hypercare.</span>
-      <span data-l="en">I bridge warehouse operations and the systems that run them. Over the last 16 months I brought WMS/OMS platforms integrated with SAP into live operation for 4 distribution, FMCG and logistics companies, from process design through go-live and hypercare.</span>
+      <span data-l="vi">Tôi là người cầu nối giữa vận hành kho và hệ thống chạy kho. Trong 16 tháng gần nhất, tôi đã đưa WMS/OMS kết nối SAP vào vận hành thực tế cho 4 doanh nghiệp phân phối, FMCG và logistics, từ thiết kế quy trình đến go-live và hypercare. Trong team Operational Excellence, tôi chuẩn hóa quy trình triển khai và thiết kế PMS, kênh kiến thức AI cho toàn công ty.</span>
+      <span data-l="en">I bridge warehouse operations and the systems that run them. Over the last 16 months I brought WMS/OMS platforms integrated with SAP into live operation for 4 distribution, FMCG and logistics companies, from process design through go-live and hypercare. On the Operational Excellence team, I standardize how projects are delivered and designed the company's PMS and AI knowledge hub.</span>
     </p>
     <div class="floor" aria-hidden="true"></div>
     <div class="actions">
@@ -236,9 +242,9 @@ footer { margin-top: 28px; font-size: 13px; color: var(--muted) }
     <div class="stats">
       <div class="stat"><b>5+</b><span data-l="vi">năm phân tích nghiệp vụ &amp; triển khai hệ thống</span><span data-l="en">years in business analysis &amp; system implementation</span></div>
       <div class="stat"><b>4</b><span data-l="vi">doanh nghiệp vận hành WMS/OMS</span><span data-l="en">companies running WMS/OMS live</span></div>
-      <div class="stat"><b>6</b><span data-l="vi">hệ thống liên thông trong go-live PGI</span><span data-l="en">connected systems in the PGI go-live</span></div>
+      <div class="stat"><b>59</b><span data-l="vi">dự án quản lý trên PMS tôi thiết kế</span><span data-l="en">projects run on the PMS I designed</span></div>
+      <div class="stat"><b>90+</b><span data-l="vi">tài khoản dùng kênh kiến thức AI</span><span data-l="en">accounts on the AI knowledge hub</span></div>
       <div class="stat"><b>~85</b><span data-l="vi">yêu cầu / CR quản lý trên Jira</span><span data-l="en">requirements / CRs managed in Jira</span></div>
-      <div class="stat"><b>23</b><span data-l="vi">dự án được rà soát dữ liệu gốc</span><span data-l="en">projects with master data audited</span></div>
     </div>
   </header>
 
@@ -365,18 +371,45 @@ footer { margin-top: 28px; font-size: 13px; color: var(--muted) }
           <span class="meta"><span data-l="vi">Team nội bộ Smartlog · quy trình, phần mềm, kiến thức, AI</span><span data-l="en">Smartlog internal team · process, software, knowledge, AI</span></span>
         </div>
         <div class="body">
-          <h3><span data-l="vi">Chuẩn hóa cách cả phòng triển khai dự án</span><span data-l="en">Standardizing how the department delivers projects</span></h3>
+          <h3><span data-l="vi">Chuẩn hóa cách cả công ty triển khai và quản lý dự án</span><span data-l="en">Standardizing how the company delivers and manages projects</span></h3>
           <dl>
             <dt><span data-l="vi">Bài toán</span><span data-l="en">Problem</span></dt>
-            <dd><span data-l="vi">Mỗi dự án triển khai theo một cách, kiến thức nằm rải rác ở nhiều nền tảng, nhiều việc lặp lại vẫn làm tay.</span><span data-l="en">Each project was delivered its own way, know-how was scattered across platforms, and repetitive work was still done by hand.</span></dd>
+            <dd><span data-l="vi">Mỗi dự án triển khai theo một cách, dữ liệu dự án nằm rải rác, kiến thức khó tìm và người mới mất nhiều thời gian làm quen.</span><span data-l="en">Each project was delivered its own way, project data was scattered, know-how was hard to find, and new joiners took a long time to ramp up.</span></dd>
             <dt><span data-l="vi">Tôi làm</span><span data-l="en">My part</span></dt>
             <dd><ul>
-              <li><span data-l="vi"><b>Quy trình:</b> chuẩn hóa quy trình triển khai dự án của phòng SID, gồm đầu vào, đầu ra từng giai đoạn và tiêu chí đánh giá hiệu quả dự án.</span><span data-l="en"><b>Process:</b> standardized the SID department's implementation process, with inputs and outputs for each phase and criteria to evaluate project effectiveness.</span></li>
-              <li><span data-l="vi"><b>PMS:</b> xây dựng phần mềm quản lý dự án nội bộ của công ty.</span><span data-l="en"><b>PMS:</b> built the company's internal project management software.</span></li>
-              <li><span data-l="vi"><b>Kênh kiến thức chung:</b> tổng hợp kiến thức từ các nền tảng về một nơi, hỏi đáp trực tiếp bằng Claude.</span><span data-l="en"><b>Knowledge hub:</b> consolidates know-how from internal platforms in one place, queryable directly with Claude.</span></li>
-              <li><span data-l="vi"><b>Công cụ và skill AI cho team:</b> phân tích CR (Lỗi / CR / Phát triển mới / Ngoài phạm vi), quiz đào tạo, bộ test tự động cho WMS (web và Android) sinh test case và ghi Passed/Failed vào biên bản.</span><span data-l="en"><b>Team tools and AI skills:</b> CR analysis (Issue / CR / New development / Out of scope), training quizzes, and an automated WMS test suite (web and Android) that generates test cases and writes Passed/Failed into the test record.</span></li>
-              <li><span data-l="vi">Quản lý ~85 yêu cầu/CR với chuẩn phân loại dùng chung toàn phòng; hướng dẫn 1 thực tập sinh làm việc độc lập.</span><span data-l="en">Managed ~85 requirements/CRs under a department-wide classification standard; coached 1 intern to work independently.</span></li>
+              <li><span data-l="vi"><b>Quy trình chuẩn SOE:</b> tham gia chuẩn hóa quy trình triển khai thành 10 giai đoạn có cổng kiểm soát (G0–G9) và 5 cơ chế xuyên suốt; đầu vào, đầu ra từng giai đoạn và bước đầu đánh giá năng lực quản lý của PM, thời gian và hiệu quả công việc.</span><span data-l="en"><b>SOE delivery framework:</b> helped standardize delivery into 10 gated stages (G0–G9) and 5 cross-cutting mechanisms, with inputs and outputs per stage and first criteria to assess PM performance, timeliness and effectiveness.</span></li>
+              <li><span data-l="vi"><b>PMS:</b> thiết kế và triển khai phần mềm quản lý dự án nội bộ cùng team AI. Quản lý roadmap, issue, CR và các cam kết đã chốt với khách qua email.</span><span data-l="en"><b>PMS:</b> designed and rolled out the internal project management system with the AI team. It tracks roadmaps, issues, CRs and client commitments confirmed by email.</span></li>
+              <li><span data-l="vi"><b>Kênh kiến thức chung, hỏi đáp bằng Claude:</b> bản 1 tự xây (lập trình với AI) cho team 12 người, có quiz và danh sách việc cần làm, cần gặp ai để người mới hòa nhập; bản 2 mở cho toàn công ty, làm cùng team AI.</span><span data-l="en"><b>Knowledge hub queryable with Claude:</b> v1 self-built (AI-assisted coding) for a 12-person team, with onboarding quizzes and a who-to-meet / what-to-do checklist; v2 rolled out company-wide with the AI team.</span></li>
+              <li><span data-l="vi"><b>Công cụ và skill AI cho team:</b> phân tích CR (Lỗi / CR / Phát triển mới / Ngoài phạm vi), bộ test tự động cho WMS (web và Android) sinh test case và ghi Passed/Failed vào biên bản; quản lý ~85 CR theo chuẩn phân loại chung; hướng dẫn 1 thực tập sinh.</span><span data-l="en"><b>Team tools and AI skills:</b> CR analysis (Issue / CR / New development / Out of scope) and an automated WMS test suite (web and Android) that generates test cases and writes Passed/Failed into the test record; managed ~85 CRs under the shared standard; coached 1 intern.</span></li>
             </ul></dd>
+            <dt><span data-l="vi">Kết quả</span><span data-l="en">Result</span></dt>
+            <dd><ul class="wins">
+              <li><span data-l="vi">PMS: <b>30+</b> người dùng (PM và ban giám đốc), <b>59</b> dự án (23 dự án cũ chuyển vào, 36 dự án mới đang chạy).</span><span data-l="en">PMS: <b>30+</b> users (PMs and the Board of Directors), <b>59</b> projects (23 migrated, 36 new and live).</span></li>
+              <li><span data-l="vi">Kênh kiến thức toàn công ty: <b>90+</b> tài khoản kết nối, <b>50+</b> tài khoản đặt câu hỏi ngay tuần đầu ra mắt.</span><span data-l="en">Company knowledge hub: <b>90+</b> connected accounts, <b>50+</b> asking questions in the first week after launch.</span></li>
+              <li><span data-l="vi">Quy trình SOE đang áp dụng cho các dự án mới, 2 dự án ở giai đoạn To-Be.</span><span data-l="en">The SOE framework is being applied to new projects; 2 are in the To-Be stage.</span></li>
+            </ul></dd>
+            <dt><span data-l="vi">Khung SOE</span><span data-l="en">SOE frame</span></dt>
+            <dd class="soe">
+              <ol class="gates">
+                <li><b>G0</b><span data-l="vi">Trước dự án</span><span data-l="en">Pre-project</span></li>
+                <li><b>G1</b><span data-l="vi">Khảo sát</span><span data-l="en">Discovery</span></li>
+                <li><b>G2</b>To-Be</li>
+                <li><b>G3</b><span data-l="vi">Xây dựng</span><span data-l="en">Build</span></li>
+                <li><b>G4</b><span data-l="vi">Vào UAT</span><span data-l="en">UAT entry</span></li>
+                <li><b>G5</b><span data-l="vi">Ra UAT</span><span data-l="en">UAT exit</span></li>
+                <li><b>G6</b>Go-live</li>
+                <li><b>G7</b>Hypercare</li>
+                <li><b>G8</b><span data-l="vi">Nghiệm thu</span><span data-l="en">Acceptance</span></li>
+                <li><b>G9</b><span data-l="vi">Đo giá trị</span><span data-l="en">Value</span></li>
+              </ol>
+              <ul class="chips">
+                <li data-l="vi">Tiến triển &amp; sẵn sàng</li><li data-l="en">Progression &amp; readiness</li>
+                <li data-l="vi">Đồng thuận với khách hàng</li><li data-l="en">Customer alignment</li>
+                <li data-l="vi">Một nguồn sự thật chung</li><li data-l="en">One project truth</li>
+                <li data-l="vi">Quyết định &amp; thay đổi</li><li data-l="en">Decision &amp; change</li>
+                <li data-l="vi">Học tập &amp; tái sử dụng</li><li data-l="en">Learning &amp; reuse</li>
+              </ul>
+            </dd>
             <dt data-m="hoursSaved" hidden><span data-l="vi">Kết quả</span><span data-l="en">Result</span></dt>
             <dd data-m="hoursSaved" hidden><ul class="wins"><li><span data-l="vi">Tiết kiệm khoảng <b class="mv"></b> giờ mỗi tuần cho đội triển khai.</span><span data-l="en">Saves the implementation team about <b class="mv"></b> hours per week.</span></li></ul></dd>
           </dl>
@@ -485,7 +518,7 @@ footer { margin-top: 28px; font-size: 13px; color: var(--muted) }
       <h2><span data-l="vi">Hơn 5 năm, 4 ngành</span><span data-l="en">5+ years across 4 industries</span></h2>
     </div>
     <div class="timeline">
-      <div class="row"><span class="when">07/2025 – <span data-l="vi">nay</span><span data-l="en">now</span></span><div><b>Smartlog Supply Chain Solutions</b> · <span class="pos">Senior Implementation Consultant</span><p><span data-l="vi">Phần mềm chuỗi cung ứng (WMS, TMS, OMS) cho nhà sản xuất, nhà phân phối và 3PL. Thành viên team Operational Excellence: chuẩn hóa quy trình triển khai, PMS, kênh kiến thức, công cụ AI.</span><span data-l="en">Supply chain software (WMS, TMS, OMS) for manufacturers, distributors and 3PLs. Member of the Operational Excellence team: delivery process, PMS, knowledge hub, AI tools.</span></p></div></div>
+      <div class="row"><span class="when">07/2025 – <span data-l="vi">nay</span><span data-l="en">now</span></span><div><b>Smartlog Supply Chain Solutions</b> · <span class="pos">Senior Implementation Consultant</span><p><span data-l="vi">Phần mềm chuỗi cung ứng (WMS, TMS, OMS) cho nhà sản xuất, nhà phân phối và 3PL. Từ 05/2026 thêm vai trò trong team Operational Excellence: quy trình SOE, PMS, kênh kiến thức, công cụ AI.</span><span data-l="en">Supply chain software (WMS, TMS, OMS) for manufacturers, distributors and 3PLs. Since 05/2026 also on the Operational Excellence team: SOE framework, PMS, knowledge hub, AI tools.</span></p></div></div>
       <div class="row"><span class="when">07/2023 – 06/2025</span><div><b>Eximbank</b> · <span class="pos">Business Analyst</span><p><span data-l="vi">Ngân hàng số: vay, tiền gửi, chuyển tiền; dự án eKYC xác thực với dữ liệu dân cư.</span><span data-l="en">Digital banking: loans, deposits, transfers; eKYC project with national ID verification.</span></p></div></div>
       <div class="row"><span class="when">03/2022 – 03/2023</span><div><b>VMG Fashion Group</b> · <span class="pos">Business Analyst</span><p><span data-l="vi">Triển khai Odoo ERP cho 300 nhân viên và 35 cửa hàng.</span><span data-l="en">Odoo ERP rollout for 300 staff and 35 stores.</span></p></div></div>
       <div class="row"><span class="when">03/2021 – 03/2022</span><div><b>APE Tech</b> · <span class="pos">Implementation Consultant</span><p><span data-l="vi">Phân tích yêu cầu, đề xuất giải pháp, viết user story.</span><span data-l="en">Requirements analysis, solution proposals, user stories.</span></p></div></div>
